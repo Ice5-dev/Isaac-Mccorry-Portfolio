@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Isaac Mccorry — Information Systems student focused on emerging technologies, AI, data, and real-world business systems." />
+  <title>Isaac Mccorry | Emerging Technology Portfolio</title>
+  <style>
+    :root{
+      --bg:#08090b;
+      --panel:#0f1115;
+      --panel-2:#14171d;
+      --text:#f4f5f7;
+      --muted:#9ba3af;
+      --line:#262b34;
+      --accent:#b7ff5a;
+      --accent-2:#d7ff9f;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 80% 5%, rgba(183,255,90,.09), transparent 26%),
+        radial-gradient(circle at 10% 28%, rgba(255,255,255,.035), transparent 22%),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(calc(100% - 40px), var(--max));margin:auto}
+    nav{
+      position:sticky;top:0;z-index:20;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      backdrop-filter:blur(14px);
+      background:rgba(8,9,11,.72);
+    }
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:-.04em;font-size:20px}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:26px;color:var(--muted);font-size:14px}
+    .nav-links a:hover{color:var(--text)}
+    .hero{padding:105px 0 80px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 22px var(--accent)}
+    h1{
+      margin:18px 0 22px;
+      font-size:clamp(54px, 9vw, 112px);
+      line-height:.92;letter-spacing:-.075em;max-width:1050px;
+    }
+    .hero-copy{max-width:760px;color:#c4c9d2;font-size:20px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 19px;border-radius:10px;font-weight:750;font-size:14px;
+      border:1px solid var(--line);transition:.2s ease;
+    }
+    .btn-primary{background:var(--accent);color:#0a0b0d;border-color:var(--accent)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(183,255,90,.15)}
+    .btn-secondary:hover{border-color:#4a515e;background:#101318}
+    .meta-strip{
+      margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    }
+    .meta-item{padding:20px 16px 20px 0}
+    .meta-item + .meta-item{border-left:1px solid var(--line);padding-left:24px}
+    .meta-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#717987}
+    .meta-value{margin-top:3px;font-weight:700}
+    section{padding:88px 0}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+    .section-kicker{color:var(--accent);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    h2{font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.055em;margin:7px 0 0}
+    .section-note{max-width:480px;color:var(--muted)}
+    .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
+      border-radius:18px;padding:28px;
+    }
+    .card h3{margin:0 0 10px;font-size:22px;letter-spacing:-.03em}
+    .card p{margin:0;color:var(--muted)}
+    .project{
+      position:relative;overflow:hidden;padding:36px;
+      min-height:360px;display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .project:after{
+      content:"";position:absolute;inset:auto -80px -120px auto;width:310px;height:310px;border-radius:50%;
+      background:radial-gradient(circle, rgba(183,255,90,.16), transparent 67%);
+    }
+    .project-tag{font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.11em;font-weight:800}
+    .project h3{font-size:38px;margin:10px 0 14px;letter-spacing:-.055em}
+    .project ul{margin:18px 0 0;padding-left:19px;color:#c6cbd4}
+    .project li{margin:8px 0}
+    .stack{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
+    .pill{
+      border:1px solid #303642;color:#cbd0d7;background:#101319;
+      padding:7px 10px;border-radius:999px;font-size:12px;
+    }
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .skill{
+      border:1px solid var(--line);border-radius:14px;padding:22px;
+      background:rgba(255,255,255,.018);font-weight:700;
+    }
+    .timeline{display:grid;gap:14px}
+    .row{
+      display:grid;grid-template-columns:180px 1fr;gap:26px;
+      padding:24px 0;border-top:1px solid var(--line);
+    }
+    .row:last-child{border-bottom:1px solid var(--line)}
+    .row .when{color:var(--muted);font-size:14px}
+    .row h3{margin:0 0 5px;font-size:20px}
+    .row .sub{color:#c3c8d0}
+    .row p{color:var(--muted);margin:12px 0 0}
+    .contact-box{
+      text-align:center;padding:60px 28px;border:1px solid var(--line);border-radius:24px;
+      background:
+        radial-gradient(circle at 50% 0, rgba(183,255,90,.12), transparent 38%),
+        #0c0e12;
+    }
+    .contact-box h2{max-width:800px;margin:0 auto 16px}
+    .contact-box p{color:var(--muted);max-width:650px;margin:0 auto 26px}
+    footer{padding:34px 0 48px;color:#707886;font-size:13px}
+    @media(max-width:800px){
+      .nav-links{display:none}
+      .hero{padding-top:72px}
+      .meta-strip{grid-template-columns:1fr 1fr}
+      .meta-item:nth-child(3){border-left:0;padding-left:0}
+      .grid-2,.skills{grid-template-columns:1fr}
+      .section-head{align-items:start;flex-direction:column}
+      .row{grid-template-columns:1fr;gap:5px}
+      .project{min-height:unset}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">IM<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="wrap">
+        <div class="eyebrow"><span class="dot"></span> Information Systems · Emerging Technologies</div>
+        <h1>Building at the edge of AI, data, and real-world systems.</h1>
+        <p class="hero-copy">
+          I’m Isaac Mccorry, an Information Systems student at the University of Arkansas focused on
+          emerging technologies. I’m interested in turning AI, data, and software systems into practical
+          tools that improve how people and businesses operate.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">View my work →</a>
+          <a class="btn btn-secondary" href="Isaac_Mccorry_Resume.docx" download>Download résumé</a>
+          <a class="btn btn-secondary" href="mailto:Mccorry43.Iml@email.com">Email me</a>
+        </div>
+
+        <div class="meta-strip">
+          <div class="meta-item">
+            <div class="meta-label">Based in</div>
+            <div class="meta-value">Fayetteville, Arkansas</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Degree</div>
+            <div class="meta-value">B.S. Information Systems</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Focus</div>
+            <div class="meta-value">Emerging Technologies</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Graduation</div>
+            <div class="meta-value">May 2027</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">About</div>
+            <h2>Technology with a business lens.</h2>
+          </div>
+          <p class="section-note">
+            My work sits at the intersection of technical systems and real-world operations, with an emphasis
+            on practical implementation, experimentation, and scalable problem-solving.
+          </p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>What I’m building toward</h3>
+            <p>
+              I’m developing a foundation across software, data, AI, and systems analysis so I can help bridge
+              the gap between new technology and the operational environments where it has to create measurable value.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Academic foundation</h3>
+            <p>
+              Coursework includes Principles of Information Systems, Systems Analysis and Design, and Data Analysis
+              and Interpretation, supported by prior science coursework from Collin College.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Selected project</div>
+            <h2>Project Overworld</h2>
+          </div>
+          <p class="section-note">
+            An independent spatial-computing exploration centered on real-world competition and AI-assisted development.
+          </p>
+        </div>
+
+        <div class="card project">
+          <div>
+            <div class="project-tag">Independent Project · Aug 2026 — Present</div>
+            <h3>Solo Zone Challenge prototype</h3>
+            <p>
+              Defined an early prototype scope for a spatial-computing concept focused on running and real-world competition.
+            </p>
+            <ul>
+              <li>Established a Hermes-based development workspace and validated local file creation and retrieval.</li>
+              <li>Configured and verified a local language-model API using Unsloth and Qwen2.5-Coder.</li>
+              <li>Built the technical foundation for future AI-assisted iteration and development.</li>
+            </ul>
+          </div>
+          <div class="stack">
+            <span class="pill">Spatial Computing</span>
+            <span class="pill">AI-Assisted Development</span>
+            <span class="pill">Hermes</span>
+            <span class="pill">Unsloth</span>
+            <span class="pill">Qwen2.5-Coder</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Capabilities</div>
+            <h2>Skills & tools</h2>
+          </div>
+          <p class="section-note">A mix of technical, analytical, and communication capabilities.</p>
+        </div>
+        <div class="skills">
+          <div class="skill">Artificial Intelligence</div>
+          <div class="skill">C#</div>
+          <div class="skill">Tableau</div>
+          <div class="skill">Web3</div>
+          <div class="skill">Acumatica</div>
+          <div class="skill">Problem Solving</div>
+          <div class="skill">Innovation</div>
+          <div class="skill">Effective Communication</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Background</div>
+            <h2>Education & experience</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="row">
+            <div class="when">Expected May 2027</div>
+            <div>
+              <h3>University of Arkansas</h3>
+              <div class="sub">B.S. Information Systems · Concentration in Emerging Technologies</div>
+              <p>Relevant coursework: Principles of Information Systems, Systems Analysis and Design, Data Analysis and Interpretation.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="when">May 2025</div>
+            <div>
+              <h3>Collin College</h3>
+              <div class="sub">Associate of Science in General Science</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="when">Aug 2025 — Present</div>
+            <div>
+              <h3>Server · Kobe Steakhouse</h3>
+              <div class="sub">Fayetteville, Arkansas</div>
+              <p>
+                Work in a high-pressure service environment requiring communication, coordination, attention to detail,
+                and fast adaptation as priorities shift during peak periods.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div class="section-kicker">Contact</div>
+          <h2>Interested in AI, systems, data, or emerging technology?</h2>
+          <p>
+            I’m building experience at the intersection of technology and business operations and am open to
+            conversations around internships, projects, and emerging-tech opportunities.
+          </p>
+          <div class="actions" style="justify-content:center">
+            <a class="btn btn-primary" href="mailto:Mccorry43.Iml@email.com">Mccorry43.Iml@email.com</a>
+            <a class="btn btn-secondary" href="tel:+14693539683">(469) 353-9683</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Isaac Mccorry · Built as a professional portfolio from résumé content.</div>
+  </footer>
+</body>
+</html>
