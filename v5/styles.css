@@ -38,3 +38,51 @@
 .linkedin-link:hover{background:var(--accent);color:var(--bg)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:760px){.linkedin-section{grid-template-columns:1fr;gap:24px;padding:40px 0}}
+
+/* Phone and small-tablet readability and touch controls. */
+.nav .mobile-linkedin{display:none}
+@media(max-width:760px){
+  .eyebrow,.label,.section-title,.section-note,.case-kicker,.case-body h4,.status,
+  .card-meta,.card-foot,.process-item .num,.experience .when,.text-link,
+  .hero-portrait figcaption,footer{font-size:12px;letter-spacing:.1em;line-height:1.5}
+  .hero h1{font-size:clamp(3rem,12vw,5.5rem);line-height:1}
+  .hero-intro{font-size:19px;line-height:1.55}
+  .case-body p,.experience p,.process-item p,.linkedin-body p,.contact-right p{
+    font-size:16px;line-height:1.65
+  }
+  .case-body .full p{font-size:26px;line-height:1.3}
+  .case-body{grid-template-columns:minmax(0,1fr);gap:24px}
+  .case-body .full{grid-column:auto}
+  .hero>*,.hero-portrait>*,.case-body>*,.linkedin-section>*{min-width:0}
+  .hero-portrait figcaption{letter-spacing:.06em;overflow-wrap:anywhere}
+  .section-top,.bottom-head{flex-wrap:wrap;gap:8px 16px}
+  .section-title{margin-block:12px}
+  .section-note{letter-spacing:.02em}
+  .project-card{padding:24px;gap:24px;min-height:330px}
+  .card-meta{align-items:flex-start;gap:12px;letter-spacing:.06em}
+  .card-meta span:last-child{text-align:right;max-width:85%}
+  .card-copy{max-width:85%}
+  .card-copy p{line-height:1.4;margin-bottom:12px}
+  .menu-toggle{min-width:64px;min-height:44px}
+  .nav{gap:4px;max-height:calc(100dvh - 67px);overflow-y:auto}
+  .nav a,.nav .mobile-linkedin{
+    display:flex;align-items:center;min-height:44px;padding:12px 16px;
+    font-size:14px;line-height:1.4;letter-spacing:.08em
+  }
+  .nav .contact-link{justify-content:center;margin-top:8px}
+  .text-link,.contact-actions a,footer>a{display:inline-flex;align-items:center;min-height:44px}
+  .contact-actions{gap:16px}
+  .contact-actions a{font-size:13px;letter-spacing:.1em;padding:12px 4px}
+  .linkedin-link{width:100%;justify-content:space-between;min-height:48px;font-size:13px;line-height:1.5;letter-spacing:.06em;padding:16px;gap:12px}
+  .linkedin-section h2{line-height:1.15}
+  footer{gap:12px}
+}
+@media(max-width:360px){
+  .brand{font-size:10px;letter-spacing:.14em}
+  .identity{gap:12px}
+  .hero-portrait{grid-template-columns:120px minmax(0,1fr);gap:16px}
+  .card-copy{max-width:100%}
+  .process{grid-template-columns:1fr}
+  .process-item{border-left:0;padding-left:0}
+}
+@media(hover:none){.project-card:hover{transform:none}}
