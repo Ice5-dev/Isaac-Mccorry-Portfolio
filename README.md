@@ -8,6 +8,7 @@ Each folder is a self-contained version of the portfolio. The root `index.html` 
 | v2 | [View v2](https://ice5-dev.github.io/Isaac-Mccorry-Portfolio/v2/) | Independently developed second iteration |
 | v3 | [View v3](https://ice5-dev.github.io/Isaac-Mccorry-Portfolio/v3/) | Dark editorial concept with Prooflane and Project Overworld |
 | v4 | [View v4](https://ice5-dev.github.io/Isaac-Mccorry-Portfolio/v4/) | v2 colors and portrait with v3 layout, Prooflane, and Overworld |
+| v5 | [View v5](https://ice5-dev.github.io/Isaac-Mccorry-Portfolio/v5/) | LinkedIn profile section; clean live navigation without past-version links |
 
 The original v1 code is also preserved in the [v1 release](https://github.com/Ice5-dev/Isaac-Mccorry-Portfolio/releases/tag/v1). A separate [v3 repository](https://github.com/Ice5-dev/Isaac-Mccorry-Portfolio-v3) contains the same v3 exploration as its own project.
 
